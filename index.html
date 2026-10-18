@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lễ hội Ok Om Bok</title>
+<style>
+:root {
+  --deep: #24113f;
+  --purple: #55236e;
+  --gold: #ffd36a;
+  --ink: #30243a;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: #fffaf2;
+  line-height: 1.7;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(36,17,63,.97);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 30px;
+}
+nav a:hover { background: var(--gold); color: var(--deep); }
+.hero {
+  min-height: 620px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 22px;
+  background:
+    linear-gradient(135deg,rgba(30,10,53,.85),rgba(94,34,104,.65)),
+    url("https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg")
+    center/cover;
+}
+.hero-inner { max-width: 900px; }
+.kicker {
+  letter-spacing: 5px;
+  color: var(--gold);
+  font-weight: bold;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px,7vw,82px);
+  color: #fff1bd;
+  margin: 18px 0;
+}
+.hero h2 { color: white; }
+.hero p { font-size: 19px; }
+.pill {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+main { max-width: 1120px; margin: auto; padding: 22px; }
+section { padding: 58px 0; scroll-margin-top: 75px; }
+.section-head { text-align: center; margin-bottom: 30px; }
+.eyebrow {
+  color: #a04c78;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(29px,4vw,43px);
+  color: var(--purple);
+  line-height: 1.2;
+}
+.lead { max-width: 780px; margin: auto; color: #65556c; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 25px;
+  align-items: center;
+}
+.grid.reverse .photo { order: 2; }
+.photo {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px #32164b25;
+  background: #eadcf0;
+}
+.photo img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+.photo:hover img { transform: scale(1.035); }
+.caption {
+  background: white;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #6c5873;
+}
+.card {
+  background: white;
+  border: 1px solid #f0dfec;
+  border-radius: 20px;
+  padding: 25px;
+}
+.card h3 { color: #7a347e; }
+.icon { font-size: 35px; display: block; }
+.facts, .timeline, .gallery {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+.facts, .timeline { grid-template-columns: repeat(3,1fr); }
+.fact {
+  background: linear-gradient(145deg,#fff,#fff0f4);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+}
+.fact strong {
+  display: block;
+  color: #6c2878;
+  font-size: 18px;
+}
+.timeline .card { border-top: 5px solid var(--gold); }
+.quote {
+  margin: 35px 0;
+  padding: 28px;
+  background: linear-gradient(120deg,#38164e,#6e347e);
+  color: white;
+  border-radius: 20px;
+  font-family: Georgia,serif;
+  font-size: 22px;
+  text-align: center;
+}
+.gallery { grid-template-columns: repeat(3,1fr); }
+.gallery .photo img { height: 220px; }
+footer {
+  background: var(--deep);
+  color: #f8eafc;
+  text-align: center;
+  padding: 35px 20px;
+}
+footer strong { color: var(--gold); }
+footer a { color: var(--gold); }
+@media(max-width:760px) {
+  .grid, .facts, .timeline { grid-template-columns: 1fr; }
+  .grid.reverse .photo { order: 0; }
+  .gallery { grid-template-columns: repeat(2,1fr); }
+  .hero { min-height: 560px; }
+}
+@media(max-width:480px) {
+  .gallery { grid-template-columns: 1fr; }
+  .photo img { height: 260px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#tongquan">Tổng quan</a>
+  <a href="#ynghia">Ý nghĩa</a>
+  <a href="#nghile">Nghi lễ</a>
+  <a href="#duaghengo">Đua ghe Ngo</a>
+  <a href="#vanhoa">Văn hóa</a>
+  <a href="#baoton">Giá trị</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">SẮC MÀU VĂN HÓA KHMER NAM BỘ</div>
+    <h1>OK OM BOK</h1>
+    <h2>Lễ hội Cúng Trăng – Đêm hội của lòng biết ơn</h2>
+    <p>
+      Một nét đẹp truyền thống của đồng bào Khmer,
+      nơi ánh trăng rằm, hạt cốm dẹp và nhịp chèo ghe Ngo
+      kể câu chuyện về mùa màng, niềm tin và tình đoàn kết.
+    </p>
+    <a class="pill" href="#tongquan">Khám phá lễ hội ↓</a>
+  </div>
+</header>
+
+<main>
+
+<section id="tongquan">
+  <div class="section-head">
+    <div class="eyebrow">01 · TÌM HIỂU CHUNG</div>
+    <h2>Lễ hội Ok Om Bok là gì?</h2>
+    <p class="lead">
+      Ok Om Bok, còn gọi là lễ Cúng Trăng hay lễ Đút cốm dẹp,
+      là lễ hội truyền thống quan trọng của người Khmer Nam Bộ.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom01.jpg"
+      alt="Nghi lễ Ok Om Bok">
+      <div class="caption">Nghi lễ truyền thống trong lễ hội Ok Om Bok.</div>
+    </div>
+    <div>
+      <h3>Một đêm hội hướng về mặt trăng</h3>
+      <p>
+        Lễ hội thường diễn ra vào rằm tháng 10 âm lịch,
+        khi mùa mưa dần kết thúc và mùa khô bắt đầu.
+        Đây là dịp người Khmer bày tỏ lòng biết ơn thiên nhiên
+        sau một mùa sản xuất.
+      </p>
+      <p>
+        Lễ Cúng Trăng thường được tổ chức tại sân nhà,
+        sân chùa hoặc nơi rộng rãi có thể nhìn thấy trăng.
+        Phần hội nổi bật là hoạt động đua ghe Ngo.
+      </p>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <span class="icon">🌕</span>
+      <strong>Thời điểm</strong>
+      Rằm tháng 10 âm lịch
+    </div>
+    <div class="fact">
+      <span class="icon">🌾</span>
+      <strong>Thông điệp</strong>
+      Tri ân thiên nhiên, cầu mùa màng tốt tươi
+    </div>
+    <div class="fact">
+      <span class="icon">📍</span>
+      <strong>Không gian</strong>
+      Sóc Trăng và nhiều cộng đồng Khmer Nam Bộ
+    </div>
+  </div>
+</section>
+
+<section id="ynghia">
+  <div class="grid reverse">
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg"
+      alt="Không khí lễ hội đua ghe Ngo">
+      <div class="caption">Đua ghe Ngo thu hút đông đảo người dân và du khách.</div>
+    </div>
+    <div>
+      <div class="eyebrow">02 · Ý NGHĨA</div>
+      <h2>Lòng biết ơn và ước vọng bình an</h2>
+      <p>
+        Trong tín ngưỡng truyền thống của người Khmer,
+        Mặt Trăng có mối liên hệ với đất, nước, thời tiết
+        và mùa màng. Lễ Cúng Trăng thể hiện sự tri ân
+        và ước mong mưa thuận gió hòa, mùa màng bội thu,
+        gia đình bình an, cuộc sống no đủ.
+      </p>
+      <p>
+        Lễ hội còn là dịp để các thành viên trong phum, sóc
+        gặp gỡ, cùng chuẩn bị lễ vật và truyền lại phong tục
+        truyền thống cho thế hệ trẻ.
+      </p>
+      <div class="quote">
+        “Biết ơn mùa màng – gìn giữ truyền thống – gắn kết cộng đồng.”
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nghile">
+  <div class="section-head">
+    <div class="eyebrow">03 · PHẦN LỄ</div>
+    <h2>Nghi thức Cúng Trăng và đút cốm dẹp</h2>
+    <p class="lead">
+      Các lễ vật dân dã thể hiện sự trân trọng thành quả lao động
+      và lời cầu chúc tốt lành.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom01.jpg"
+      alt="Lễ vật truyền thống">
+      <div class="caption">Lễ vật được chuẩn bị trang trọng trong ngày hội.</div>
+    </div>
+    <div>
+      <h3>Lễ vật thường gặp</h3>
+      <p>
+        Mâm lễ có thể gồm cốm dẹp, khoai, dừa, chuối, bưởi,
+        các loại nông sản, hoa quả và bánh kẹo.
+        Thành phần cụ thể có thể khác nhau theo từng địa phương.
+      </p>
+      <h3>Trình tự tiêu biểu</h3>
+      <ol>
+        <li>Chuẩn bị bàn lễ và bày các sản vật.</li>
+        <li>Người chủ lễ khấn nguyện, bày tỏ lòng biết ơn.</li>
+        <li>Người lớn đút cốm dẹp cho trẻ nhỏ và hỏi về mong ước của các em.</li>
+        <li>Mọi người cùng chia sẻ lễ vật trong không khí sum vầy.</li>
+      </ol>
+      <p>
+        <strong>Cốm dẹp</strong> được làm từ nếp non rang rồi giã dẹp,
+        là món ăn gắn liền với mùa lúa và tên gọi của lễ hội.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="duaghengo">
+  <div class="section-head">
+    <div class="eyebrow">04 · PHẦN HỘI</div>
+    <h2>Đua ghe Ngo – nhịp chèo của tinh thần đoàn kết</h2>
+    <p class="lead">
+      Tiếng trống, tiếng hò và những mái chèo đồng loạt
+      tạo nên bầu không khí náo nhiệt trên dòng sông.
+    </p>
+  </div>
+
+  <div class="photo">
+    <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg"
+    alt="Đua ghe Ngo trên sông">
+    <div class="caption">Các đội ghe Ngo tranh tài trong sự cổ vũ của khán giả.</div>
+  </div>
+
+  <div class="timeline">
+    <div class="card">
+      <span class="icon">🛶</span>
+      <h3>Ghe Ngo</h3>
+      <p>
+        Ghe có dáng dài, thân thon và được trang trí bằng
+        màu sắc, họa tiết đặc trưng của từng đội hoặc ngôi chùa.
+      </p>
+    </div>
+    <div class="card">
+      <span class="icon">🥁</span>
+      <h3>Nhịp chèo đồng lòng</h3>
+      <p>
+        Các tay chèo phối hợp nhịp nhàng theo hiệu lệnh,
+        cùng giữ hướng và tốc độ để đưa ghe về đích.
+      </p>
+    </div>
+    <div class="card">
+      <span class="icon">🤝</span>
+      <h3>Niềm tự hào cộng đồng</h3>
+      <p>
+        Đội ghe đại diện cho cộng đồng, thể hiện sức mạnh
+        tập thể, tinh thần kỷ luật và sự gắn bó.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="vanhoa">
+  <div class="section-head">
+    <div class="eyebrow">05 · KHÔNG GIAN VĂN HÓA</div>
+    <h2>Những sắc màu làm nên lễ hội</h2>
+    <p class="lead">
+      Ok Om Bok còn gắn với nghệ thuật, sinh hoạt cộng đồng
+      và các phong tục địa phương.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg"
+      alt="Sắc màu đua ghe Ngo">
+      <div class="caption">Sắc màu trên sông</div>
+    </div>
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom01.jpg"
+      alt="Nghi thức truyền thống">
+      <div class="caption">Nghi thức truyền thống</div>
+    </div>
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg"
+      alt="Không khí ngày hội">
+      <div class="caption">Niềm vui cộng đồng</div>
+    </div>
+  </div>
+
+  <p>
+    Tùy địa phương và chương trình từng năm, lễ hội có thể
+    có thả đèn nước, đèn gió, biểu diễn nghệ thuật truyền thống
+    Khmer như Dù kê, Rô băm, múa và âm nhạc dân gian.
+    Những hoạt động này góp phần giới thiệu văn hóa Khmer
+    đến khách tham quan.
+  </p>
+</section>
+
+<section id="baoton">
+  <div class="grid reverse">
+    <div class="photo">
+      <img src="https://vietnamtourism.vn//imguploads/tourist/2014/SocTrang/Ocombook/52LHoccom02.jpg"
+      alt="Lễ hội truyền thống Khmer">
+      <div class="caption">Lễ hội là dịp gặp gỡ và tiếp nối truyền thống.</div>
+    </div>
+    <div>
+      <div class="eyebrow">06 · GIÁ TRỊ VÀ BẢO TỒN</div>
+      <h2>Gìn giữ di sản, lan tỏa bản sắc</h2>
+      <p>
+        <strong>Giá trị văn hóa:</strong>
+        Lưu giữ tín ngưỡng dân gian, tri thức nông nghiệp,
+        nghệ thuật và phong tục của người Khmer.
+      </p>
+      <p>
+        <strong>Giá trị cộng đồng:</strong>
+        Khuyến khích tinh thần hợp tác, gắn kết giữa gia đình,
+        chùa và phum sóc.
+      </p>
+      <p>
+        <strong>Giá trị du lịch:</strong>
+        Giới thiệu văn hóa địa phương, ẩm thực và nghệ thuật Khmer.
+      </p>
+      <p>
+        <strong>Cách gìn giữ:</strong>
+        Tìm hiểu phong tục từ nguồn đáng tin cậy, tôn trọng
+        không gian tín ngưỡng, giữ vệ sinh nơi tổ chức,
+        không xả rác xuống sông và khuyến khích thế hệ trẻ
+        tham gia các hoạt động văn hóa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">LỜI KẾT</div>
+    <h2>Ánh trăng còn sáng – truyền thống còn được tiếp nối</h2>
+    <p class="lead">
+      Lễ hội Ok Om Bok là biểu tượng đẹp của lòng biết ơn
+      thiên nhiên và sức sống văn hóa Khmer Nam Bộ.
+      Mỗi nghi thức, món cốm dẹp và nhịp chèo ghe Ngo đều
+      góp phần gìn giữ ký ức cộng đồng, kết nối quá khứ với hiện tại.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>OK OM BOK · LỄ HỘI CÚNG TRĂNG</strong></p>
+  <p>Trang thông tin giới thiệu văn hóa – phục vụ học tập và tìm hiểu di sản Việt Nam.</p>
+  <p>
+    Tư liệu tham khảo: Cục Du lịch Quốc gia Việt Nam –
+    “Lễ Ooc-Om-Bok và hội đua ghe Ngo”.
+  </p>
+  <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    ↑ Trở về đầu trang
+  </a>
+</footer>
+
+</body>
+</html>
